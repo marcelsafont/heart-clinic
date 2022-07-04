@@ -109,16 +109,7 @@ p{
   margin-bottom:40px;
 }
 
-.video-box .text-animation{
-  position:absolute;
-  bottom:90px;
-  width:100%;
-  font-size:130px;
-  color:#fff;
-  line-height:130px;
-}
-
-.video-box{
+.header-page{
   height:95vh;
   overflow:hidden;
   position:relative;
@@ -137,12 +128,15 @@ p{
   object-fit: cover;
 }
 
-.video-box .arrow-down{
+
+.header-page .arrow-down{
   position:absolute;
   z-index:2;
   bottom:10px;
-  text-align: center;
   width:100%;
+  left:0;
+  display: flex;
+  justify-content: center;
 }
 .video-box .arrow-down a{
   display:inline-block;
@@ -207,6 +201,55 @@ p{
   width:350px
 }
 
+.flexslider-mobile{
+  display:none;
+}
+
+.marquee{
+  position:absolute;
+  z-index:1000;
+  color:#fff;
+  bottom:100px;
+  overflow:hidden;
+  width:100%;
+  height:300px;
+}
+
+.marquee_inner{
+  display:flex;
+  align-items: flex-end;
+  font-size:130px;
+  line-height:130px;
+  height:300px;
+  position:absolute;
+  z-index:1000;
+  left:100%;
+  animation: marquee 25s linear infinite;
+  width:300%;
+}
+
+.marquee_inner span{
+  display:block;
+  width:100%;
+}
+
+.marquee_inner span:nth-child(2){
+  margin-top:auto;
+  margin-bottom:auto;
+}
+
+@keyframes marquee {
+  0% {
+      transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+      transform: translate3d(-120%, 0, 0);
+  }
+}
+
+
+
 @media screen and (max-width:768px){
   body{
     font-size:20px;
@@ -222,18 +265,50 @@ p{
     font-size:24px;
     line-height:33px;
   }
-  .video-box{
+  .header-page{
     height:500px;
   }
   #footer .cols-footer > div{
-    padding-right:0;
+    padding-right:0!important;
+    width:100%!important;
     padding-bottom:20px;
   }
   .logo img{
     max-width:75%;
   }
-  .video-box .text-animation{
+  .header-page .text-animation{
     font-size:70px;
     line-height:70px;
+  }
+  .slider-mobile-images .video-box{
+    display:none!important;
+  }
+  .slider-mobile-images .flexslider-mobile{
+    display:block;
+    position:absolute;
+    z-index:0;
+    top:0;
+    height:500px;
+    width:100%;
+  }
+
+  .slider-mobile-images .flexslider-mobile img{
+    width:100%;
+    object-fit: cover;
+  }
+  .flex-direction-nav{
+    display:none;
+  }
+
+  .marquee{
+    bottom:60px;
+    height:220px;
+  }
+
+  .marquee_inner{
+    animation: marquee 20s linear infinite;
+    font-size:70px;
+    bottom:70px;
+    height:220px;
   }
 }

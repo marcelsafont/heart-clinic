@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/flexslider.css">
 </head>
 <body>
   <header id="header">
@@ -14,16 +15,39 @@
     </div>
 
   </header>
-  <main id="main">
-    <div class="video-box">
-      <video src="assets/video/video.mp4" autoplay muted loop></video>
-      <div class="text-animation">
-        <marquee>Innovative</marquee>
+  <main id="main" class="slider-mobile-images">
+    <div class="header-page">
+      <div class="marquee">
+        <div class="marquee_inner">
+
+          <span>Innovative</span>
+          <span>Humanitarian</span>
+          <span>Education</span>
+        </div>
+       
+      </div>
+      <div class="video-box">
+        <video src="assets/video/video.mp4" autoplay muted loop></video>
+        
+        
+      </div>
+      <div class="flexslider-mobile">
+        <ul class="slides">
+          <li>
+            <img src="https://i.picsum.photos/id/866/300/400.jpg?hmac=FPBgZOMIxD7R8o9EW1PEHhs5koepWMT9EZq8rtrKM74" />
+          </li>
+          <li>
+            <img src="https://images.unsplash.com/photo-1656568740683-e48fbeeaf4b6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY1Njk0NTY3Ng&ixlib=rb-1.2.1&q=80&w=300" />
+          </li>
+          
+        </ul>
       </div>
       <div class="arrow-down">
         <a href="#intro"><img src="assets//img/arrow-down.svg" alt=""></a>
       </div>
     </div>
+   
+    
     <div class="container">
       <div class="intro" id="intro">
         <p>
@@ -68,5 +92,8 @@ SWIFT (BIC): ZKBKCHZZ80A
       </div>
     </div>
   </footer>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script src="assets/js/jquery.flexslider-min.js"></script>
+  <script src="assets/js/functions.js"></script>
 </body>
 </html>
