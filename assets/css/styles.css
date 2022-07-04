@@ -136,7 +136,7 @@ p{
 }
 
 .video-box video{
-  width:100%;
+  height:100%;
   object-fit: cover;
 }
 
@@ -195,4 +195,32 @@ p{
 
 #footer .cols-footer > div:nth-child(3){
   width:350px
+}
+
+@media screen and (max-width:768px){
+  body{
+    font-size:20px;
+    line-height:1.3em;
+  }
+  #footer .cols-footer{
+    flex-direction:column;
+  }
+  .intro p{
+    font-size:24px;
+    line-height:33px;
+  }
+  .video-box{
+    height:500px;
+  }
+  #footer .cols-footer > div{
+    padding-right:0;
+    padding-bottom:20px;
+  }
+  .logo img{
+    max-width:75%;
+  }
+  .video-box .text-animation{
+    font-size:70px;
+    line-height:70px;
+  }
 }
