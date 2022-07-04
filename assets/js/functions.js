@@ -6,7 +6,7 @@ $(window).load(function() {
       animation: "slide",
       controlNav: false,
       animationSpeed: 600,
-      slideshowSpeed: 2000,
+      slideshowSpeed: 4000,
     });
   }
   
