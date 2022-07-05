@@ -196,6 +196,11 @@ p{
   padding-top:20px;
 }
 
+#footer a{
+  color:#000;
+  text-decoration: none;
+}
+
 #footer .cols-footer{
   display:flex;
   font-size:18px;
