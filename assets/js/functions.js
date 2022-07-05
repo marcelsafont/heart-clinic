@@ -11,7 +11,7 @@ $(window).load(function() {
   }
   if($(window).width() > 768){
     let index = 0;
-    const randomPositions = [1,2,3].sort( () => .5 - Math.random() );
+    const randomPositions = [1,2,3,4,5,6,7,8].sort( () => .5 - Math.random() );
      randomPositions.forEach((item, index) => {
       if(index == 0){
         $('.video-box').append('<video class="active" src="assets/videos/video'+item+'.mp4" muted autoplay></video>');
