@@ -1,6 +1,13 @@
 @font-face {
   font-family: 'sangblue';
-  src: url('../fonts/sangbleu_sunrise.woff'), url('../fonts/sangbleu_sunrise.woff2');
+  src: url('../fonts/sangbleu_sunrise.woff2'), url('../fonts/sangbleu_sunrise.woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'sangblue';
+  src: url('../fonts/sangbleu_sunrise_bold.woff2'), url('../fonts/sangbleu_sunrise_bold.woff');
+  font-weight: bold;
 }
 
 *,
@@ -71,6 +78,7 @@ select {
 	font: inherit;
 }
 
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
 	* {
@@ -82,6 +90,10 @@ select {
 }
 
 html{scroll-behavior:smooth}
+
+b{
+  font-weight: bold;
+}
 	
 body{
   font-size:26px;
