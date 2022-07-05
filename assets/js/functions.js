@@ -27,7 +27,8 @@ $(window).load(function() {
         if(index >= $('.video-box video').length - 1){
           $('.video-box video').eq(0).addClass('active').get(0).play();
         }else{
-          $(item).next().addClass('active').get(0).play();
+          //$(item).next().attr('autoplaye', 'autoplay').addClass('active').get(0).play();
+          $(item).next().attr('autoplaye', 'autoplay').addClass('active')
         }
         
       })
