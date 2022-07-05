@@ -131,10 +131,34 @@ p{
   background-color:#000;
 }
 
-.video-box video{
+.video-box{
+  width: 100%;
+    height: inherit;
+    min-height: 500px;
+    color: #fff;
+    transform-style: preserve-3d;
+    padding-bottom: 4rem;
+}
+
+.video-box .slide{
   position: absolute;
-  top: 0;
-  left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    z-index: 4;
+    opacity: 0;
+    transition: all .4s ease-in-out;
+    overflow: hidden;
+}
+
+.video-box .slide.active{
+  z-index: 3;
+    opacity: 1;
+}
+
+.video-box video{
   display: block;
   width: 100%;
   height: 100%;
@@ -142,15 +166,28 @@ p{
   transition: all .4s;
 }
 
-.video-box video.loading{
-  opacity:0;
+.slide-bg{
+  position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    transform: translateY(-5%) scale(1.1);
+    opacity: 0;
+    transition: all .4s ease-in-out;
+    background-color: #000;
+}
+
+.active .slide-bg{
+  transform:none;
+  opacity:1;
 }
 
 
 
 .header-page .arrow-down{
   position:absolute;
-  z-index:2;
+  z-index:5;
   bottom:10px;
   width:100%;
   left:0;
