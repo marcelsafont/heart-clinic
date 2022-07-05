@@ -1,14 +1,4 @@
-
-
-$(window).load(function() {
-  if($(window).width() < 768){
-    $('.flexslider-mobile').flexslider({
-      animation: "fade",
-      controlNav: false,  
-      animationSpeed: 1000,
-      slideshowSpeed: 5000,
-    });
-  }
+$(document).ready(function(){
   if($(window).width() > 768){
     let index = 0;
     const randomPositions = [1,2,3].sort( () => .5 - Math.random() );
@@ -28,6 +18,18 @@ $(window).load(function() {
       }
     })
   }
+})
+
+$(window).load(function() {
+  if($(window).width() < 768){
+    $('.flexslider-mobile').flexslider({
+      animation: "fade",
+      controlNav: false,  
+      animationSpeed: 1000,
+      slideshowSpeed: 5000,
+    });
+  }
+  
   
 });
 
