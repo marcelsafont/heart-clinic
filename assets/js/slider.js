@@ -22,107 +22,46 @@ constructor(container) {
 
 
 init = () => {
-  console.log('....initializing slider on .' + this.sliderWrap.classList);
-
   this.slideList = this.sliderWrap.querySelectorAll(this.slideElem);
-  this.slideList[0].classList.add(this.activeClass);
-  this.slideList[0].querySelector('video') && this.slideList[0].querySelector('video').play();
-
   this.slideSize = this.slideList.length - 1;
-  this.currentSlide = 0;
-
-  if (this.sliderWrap.dataset.sliderControl == 'true') {
-    this.createBullets(this.sliderWrap);
-  }
-
-  if (this.autoplay == 'true') {
-    setInterval(()=>{
-      this.autoplayFunct();
-    }, this.timming);
-  }
-
+  this.currentSlide = Math.floor(Math.random() * (this.slideSize));
+  this.slideList = this.sliderWrap.querySelectorAll(this.slideElem);
+  this.slideList[this.currentSlide].classList.add(this.activeClass);
+  
+  const self = this;
+  this.slideList.forEach(function(el, index){
+    el.querySelector('video').innerHTML = '<source  src="assets/videos/video'+(index + 1) +'.mp4" type="video/mp4" />';
+    // el.querySelector('video').addEventListener('ended', () => {
+    //   self.changeSlider(self.currentSlide);
+    //   console.log('video finito');
+    // })
+  })
+  this.slideList[this.currentSlide].querySelector('video') && this.slideList[0].querySelector('video').play();
 }
 
-autoplayFunct = () => {
-  if (this.autoplayState) {
-    this.triggerSlider('next');
-  }
-}
-
-triggerSlider = (direction) => {
-  switch(direction) {
-    case 'prev':
-      this.currentSlide == 0 ? this.changeSlider(this.slideSize) :  this.changeSlider(this.currentSlide - 1);
-      break;
-
-    case 'next':
-      this.currentSlide ==  this.slideSize ? this.changeSlider(0) : this.changeSlider(this.currentSlide + 1);
-      break;
-  }
-}
 
 
 changeSlider = (slide) => {
-  if (!this.animating) {
-    this.disableInteraction();
-    this.clearCurrentSlide();
-    this.slideList[slide].classList.add(this.activeClass);
-    this.slideList[slide].querySelector('video') && this.slideList[slide].querySelector('video').play();
-    this.currentSlide = slide;
-
-    // Change the active bullet
-    this.bullets.forEach((li)=> li.classList.remove('active'))
-    this.bullets[slide].classList.add('active')
-  }
-}
-
-clearCurrentSlide = () => {
-  this.slideList.forEach((elem) => {
-    elem.classList.remove(this.activeClass);
-    elem.querySelector('video')&& elem.querySelector('video').pause();
-  });
-}
-
-createBullets = (container) => {
-
-  this.slideList.forEach((elem, index) => {
-    const subtitle = elem.dataset.subtitle;
-    const title = elem.dataset.title;
-    const color = elem.dataset.color;
-    const description = elem.dataset.description;
-
-    this.bulletLi = document.createElement('li');
-    this.bulletLi.classList.add(color);
-    this.bulletLi.innerHTML = `<div class="content">
-      <div class="wrapper_title">
-        <div class="subtitle">${subtitle}</div>
-        <div class="title semilogo">
-          <span>RE!</span><span class="empty_text">${title}</span>
-        </div>
-      </div>
-      <div class="description">${description}</div>	
-    </div>`;
-    index == 0 && this.bulletLi.classList.add('active');
-
-    this.bulletLi.addEventListener('click', (e) => {
-      this.autoplayState = false;
-      this.changeSlider(index);
-      this.bullets.forEach((e)=> e.classList.remove('active'))
-      this.bullets[index].classList.add('active');
-    })
-
-    this.bullets.push(this.bulletLi);
-    //this.sliderWrap.parentNode.querySelector(this.controls).appendChild(this.bulletLi);
-  });
-
-}
-
-disableInteraction = () => {
-  this.animating = true;
-  setTimeout(()=>{
-    this.animating = false
-  }, 500);
+    //stop current slider
+    this.slideList[slide].classList.remove(this.activeClass);
+    
+    //start new slider
+    if(slide >= this.slideSize){
+      //if last slide start again
+      this.currentSlide = 0;
+    }else{
+      //if not last, increase
+      this.currentSlide = slide + 1;
+    }
+    this.slideList[this.currentSlide].classList.add(this.activeClass); 
+    this.slideList[this.currentSlide].querySelector('video') && this.slideList[this.currentSlide].querySelector('video').play();
+   
 }
 
 }
+
+
+
+
+
 
