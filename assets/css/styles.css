@@ -381,9 +381,9 @@ p{
     font-size:70px;
     line-height:70px;
   }
-  .slider-mobile-images .video-box{
+  /* .slider-mobile-images .video-box{
     display:none!important;
-  }
+  } */
   .slider-mobile-images .flexslider-mobile{
     display:block;
     position:absolute;
