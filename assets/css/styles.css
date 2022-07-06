@@ -46,6 +46,7 @@ body {
 	scroll-behavior: smooth;
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
+  color:#000;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -93,6 +94,17 @@ html{scroll-behavior:smooth}
 
 b{
   font-weight: bold;
+}
+
+a{
+  color:#000;
+  border-bottom:2px solid #FFD516;
+  text-decoration: none;
+  transition: color .3s;
+}
+
+a:hover{
+  color:#FFD516;
 }
 	
 body{
@@ -194,9 +206,15 @@ p{
   display: flex;
   justify-content: center;
   animation: arrowDown 1s linear infinite;
+  
 }
 .video-box .arrow-down a{
   display:inline-block;
+  border:0!important;
+}
+
+.arrow-down a{
+  border:0!important;
 }
 
 
@@ -240,30 +258,35 @@ p{
   padding-top:20px;
 }
 
-#footer a{
-  color:#000;
-  text-decoration: none;
-}
-
 #footer .cols-footer{
   display:flex;
   font-size:18px;
   line-height:1.65em;
 }
 
+#footer .cols-footer a{
+  color:#000;
+  border:none;
+}
+
+#footer .cols-footer a:hover{
+  color:#FFD516;
+  border-bottom:2px solid #FFD516;
+}
+
 #footer .cols-footer > div:first-child{
-  width:280px;
+  width:350px;
   padding-right:30px;
 }
 
 #footer .cols-footer > div:nth-child(2){
-  width:380px;
+  width:400px;
   padding-right:30px;
 }
 
 
 #footer .cols-footer > div:nth-child(3){
-  width:350px
+  width:150px
 }
 
 .flexslider-mobile{
