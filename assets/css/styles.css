@@ -358,7 +358,10 @@ p{
   padding-bottom:30px;
 }
 
-
+.first-video video{
+  background:url('/assets/img/poster-video-1.jpg') no-repeat center center;
+  background-size:cover;
+}
 
 @media screen and (max-width:768px){
   .basic-page #main{
