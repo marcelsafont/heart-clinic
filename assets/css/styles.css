@@ -363,6 +363,15 @@ p{
   background-size:cover;
 }
 
+.cookiefirst-root > div > div{
+  max-width:1200px!important;
+  margin:auto!important;
+}
+
+.cookiefirst-root > div > div > div:nth-child(2){
+  flex-direction:column!important;
+}
+
 @media screen and (max-width:768px){
   .basic-page #main{
     padding-top:200px;
