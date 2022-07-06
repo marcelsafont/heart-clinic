@@ -20,7 +20,6 @@ init = () => {
   this.slideList = this.sliderWrap.querySelectorAll(this.slideElem);
   this.slideSize = this.slideList.length - 1;
   this.currentSlide = Math.floor(Math.random() * (this.slideSize));
-  this.currentSlide = 2;
   this.slideList = this.sliderWrap.querySelectorAll(this.slideElem);
   this.slideList[this.currentSlide].classList.add(this.activeClass);
   
