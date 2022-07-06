@@ -367,12 +367,13 @@ p{
 .cookiefirst-root > div > div > div{
   max-width:1200px!important;
   margin:auto!important;
+  min-width:auto!important;
 }
 
 .cookiefirst-root button{
-  color:#000;
-  appearance: none;
-  border-bottom:1px solid #000;
+  color:#000!important;
+  appearance: none!important;
+  border-bottom:1px solid #000!important;
 }
 
 .cookiefirst-root > div > div > div:nth-child(2){
