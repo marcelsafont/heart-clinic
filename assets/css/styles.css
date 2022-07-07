@@ -191,7 +191,7 @@ p{
     z-index: 1;
     transform: translateY(-5%) scale(1.1);
     opacity: 0;
-    transition: all 1.2s ease-in-out;
+    transition: all .8s ease-in-out;
     background-color: #000;
 }
 
